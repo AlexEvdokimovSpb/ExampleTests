@@ -17,6 +17,7 @@ class EmailValidator : TextWatcher {
 
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) = Unit
 
+
     companion object {
 
         /**
@@ -35,5 +36,26 @@ class EmailValidator : TextWatcher {
         fun isValidEmail(email: CharSequence?): Boolean {
             return email != null && EMAIL_PATTERN.matcher(email).matches()
         }
+
+        fun testArray(testArray: Array<Int>): Array<Int>? {
+            when (testArray.size) {
+                0 -> return null
+                1 -> return testArray
+                else -> {
+                    testArray.sort()
+                    return testArray
+                }
+            }
+        }
+
+        fun test(test: Int): Int? {
+            when (test) {
+                1 -> return test
+                2 -> return 0
+                else -> return null
+            }
+        }
     }
+
+
 }
